@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Fate Shake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f23 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .app-name {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 30px 0;
+            font-size: 0.95rem;
+        }
+
+        .privacy-badge svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .icon {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #a855f7;
+            margin: 24px 0 12px 0;
+        }
+
+        p {
+            color: #b0b0b0;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .no-collect li::before {
+            content: "✕";
+            color: #ef4444;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(99, 102, 241, 0.1));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .highlight-box h3 {
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .summary-item {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .summary-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .summary-item .label {
+            font-weight: 600;
+            color: #10b981;
+            font-size: 0.9rem;
+        }
+
+        .contact-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-box a {
+            color: #a855f7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 16px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 24px 20px;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🎱</div>
+            <h1>Privacy Policy</h1>
+            <p class="app-name">Fate Shake - Magic Answer Ball</p>
+            <p class="last-updated">Last Updated: January 31, 2026</p>
+            
+            <div class="privacy-badge">
+                <svg fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                Zero Data Collection
+            </div>
+        </header>
+
+        <section>
+            <h2><span class="icon">🛡️</span> Our Privacy Promise</h2>
+            <p>
+                Fate Shake is built with privacy as a core principle. We believe your fortune-seeking should be 
+                completely private. <strong>We collect absolutely no data about you.</strong>
+            </p>
+            
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="icon">🚫</div>
+                    <div class="label">No Tracking</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">📵</div>
+                    <div class="label">No Ads</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">🔒</div>
+                    <div class="label">No Accounts</div>
+                </div>
+                <div class="summary-item">
+                    <div class="icon">📴</div>
+                    <div class="label">Works Offline</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="icon">❌</span> Data We Do NOT Collect</h2>
+            <ul class="no-collect">
+                <li>Personal information (name, email, phone number)</li>
+                <li>Location data or GPS coordinates</li>
+                <li>Device identifiers or advertising IDs</li>
+                <li>Usage analytics or behavioral data</li>
+                <li>Photos, contacts, or calendar data</li>
+                <li>Health, fitness, or biometric data</li>
+                <li>Financial or payment information</li>
+                <li>Browsing history or search queries</li>
+                <li>Any data transmitted to external servers</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span class="icon">📱</span> Data Stored on Your Device</h2>
+            <p>
+                The following data is stored <strong>only on your device</strong> using Apple's secure local storage. 
+                This data never leaves your phone and we have no access to it:
+            </p>
+            <ul>
+                <li><strong>Answer History:</strong> Your past questions and answers (optional, can be cleared)</li>
+                <li><strong>Preferences:</strong> Theme selection, character choice, sound/haptic settings</li>
+                <li><strong>Onboarding Status:</strong> Whether you've seen the tutorial</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h3>🔐 Complete Control</h3>
+                <p style="margin-bottom: 0;">
+                    You can delete all your data anytime by going to <strong>Settings → Clear History</strong> 
+                    in the app, or simply uninstall the app to remove everything.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="icon">🔌</span> Third-Party Services</h2>
+            <p>Fate Shake does <strong>not integrate with any third-party services</strong>:</p>
+            <ul class="no-collect">
+                <li>No analytics platforms (Google Analytics, Firebase, Mixpanel, etc.)</li>
+                <li>No advertising networks or ad SDKs</li>
+                <li>No crash reporting services (Crashlytics, Sentry, etc.)</li>
+                <li>No social media SDKs or trackers</li>
+                <li>No external APIs or server connections</li>
+            </ul>
+            <p>
+                The app works completely offline. The only network activity is if you choose to 
+                leave a tip (processed securely by Apple's App Store).
+            </p>
+        </section>
+
+        <section>
+            <h2><span class="icon">💳</span> In-App Purchases</h2>
+            <p>
+                Fate Shake offers optional tips to support development. These purchases are:
+            </p>
+            <ul>
+                <li>Processed entirely by Apple through the App Store</li>
+                <li>Subject to <a href="https://www.apple.com/legal/privacy/" style="color: #a855f7;">Apple's Privacy Policy</a></li>
+                <li>We never receive your payment details</li>
+                <li>Completely optional - the app is 100% free to use</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span class="icon">👶</span> Children's Privacy</h2>
+            <p>
+                Fate Shake is safe for users of all ages. Since we collect no personal information 
+                from anyone, the app complies with COPPA (Children's Online Privacy Protection Act) 
+                and similar regulations worldwide.
+            </p>
+        </section>
+
+        <section>
+            <h2><span class="icon">🌍</span> International Users</h2>
+            <p>
+                Because we don't collect or process any personal data, Fate Shake complies with:
+            </p>
+            <ul>
+                <li><strong>GDPR</strong> (European Union)</li>
+                <li><strong>CCPA</strong> (California, USA)</li>
+                <li><strong>LGPD</strong> (Brazil)</li>
+                <li><strong>PIPEDA</strong> (Canada)</li>
+                <li>Other international privacy regulations</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><span class="icon">📝</span> Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy occasionally. Any changes will be reflected by updating 
+                the "Last Updated" date at the top of this page. Continued use of the app after changes 
+                constitutes acceptance of the updated policy.
+            </p>
+        </section>
+
+        <section>
+            <h2><span class="icon">📧</span> Contact Us</h2>
+            <div class="contact-box">
+                <p>Questions about our privacy practices?</p>
+                <p><a href="mailto:contact@comtog.com  ">contact@comtog.com  </a></p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="icon">⚠️</span> Entertainment Disclaimer</h2>
+            <p>
+                <strong>Fate Shake is an entertainment app only.</strong> All answers provided by the app are 
+                randomly generated for fun and amusement purposes.
+            </p>
+            <ul class="no-collect">
+                <li>The app does not provide real advice, predictions, or guidance</li>
+                <li>Do not use this app to make important life, financial, medical, or legal decisions</li>
+                <li>The developers are not responsible for any decisions made based on the app's responses</li>
+                <li>This is a novelty/entertainment product, not a fortune-telling or advisory service</li>
+            </ul>
+            <p>
+                By using this app, you acknowledge that all answers are purely for entertainment and you will not 
+                hold the developers liable for any outcomes resulting from decisions influenced by the app.
+            </p>
+        </section>
+
+        <footer>
+            <p>© 2026 Fate Shake. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="index.html">Home</a> · 
+                <a href="terms.html">Terms of Use</a> · 
+                <a href="support.html">Support</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

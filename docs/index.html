@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fate Shake - Magic Answer Ball for iOS</title>
+    <meta name="description" content="Shake your phone to reveal your destiny. 8 unique characters, 240+ answers, completely free and private.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #0f0f23 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 24px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .logo {
+            font-size: 120px;
+            margin-bottom: 24px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #a855f7 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 10px 40px rgba(168, 85, 247, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(168, 85, 247, 0.4);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .badges {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .badge .icon {
+            margin-right: 6px;
+        }
+
+        .features {
+            padding: 80px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 32px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .characters {
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        .characters h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .character-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .character {
+            font-size: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .character:hover {
+            transform: scale(1.2);
+        }
+
+        .privacy-section {
+            padding: 60px 24px;
+            text-align: center;
+            background: rgba(16, 185, 129, 0.05);
+            border-top: 1px solid rgba(16, 185, 129, 0.1);
+            border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #10b981;
+        }
+
+        .privacy-section p {
+            color: #888;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .privacy-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .privacy-item {
+            text-align: center;
+        }
+
+        .privacy-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .privacy-item .label {
+            font-size: 0.85rem;
+            color: #10b981;
+        }
+
+        footer {
+            padding: 40px 24px;
+            text-align: center;
+            color: #666;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        footer a:hover {
+            color: #a855f7;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 80px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .character {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo">🎱</div>
+        <h1>Fate Shake</h1>
+        <p class="tagline">Shake your phone. Reveal your destiny. 8 unique characters ready to answer life's questions.</p>
+        
+        <a href="https://apps.apple.com/app/fate-shake" class="cta-button">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            Download on App Store
+        </a>
+
+        <div class="badges">
+            <span class="badge"><span class="icon">💯</span> 100% Free</span>
+            <span class="badge"><span class="icon">🚫</span> No Ads</span>
+            <span class="badge"><span class="icon">🔒</span> No Data Collection</span>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Why Fate Shake?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Shake to Reveal</h3>
+                <p>Just shake your phone to get your answer. The harder you shake, the faster the magic works!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3>8 Unique Characters</h3>
+                <p>From wise Professor Whiskers to silly Chuckles the Clown. Each with their own personality and 30+ unique answers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Rare Answers</h3>
+                <p>5% chance to get a special rare answer. Keep shaking to discover them all!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Beautiful Themes</h3>
+                <p>Choose from Cosmic, Mystic, Ocean, or Minimal themes. Each creates a unique atmosphere.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📤</div>
+                <h3>Share Your Fortune</h3>
+                <p>Create beautiful share cards for Instagram, TikTok, and more. Show off your answers!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📴</div>
+                <h3>Works Offline</h3>
+                <p>No internet required. Your fate is always accessible, anywhere, anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="characters">
+        <h2>Meet the Characters</h2>
+        <div class="character-row">
+            <div class="character" title="Professor Whiskers">🎓</div>
+            <div class="character" title="Mystic Marina">🔮</div>
+            <div class="character" title="Nana Goodwin">👵</div>
+            <div class="character" title="Captain Blackbeard">🏴‍☠️</div>
+        </div>
+        <div class="character-row" style="margin-top: 20px;">
+            <div class="character" title="Chuckles the Clown">🤡</div>
+            <div class="character" title="Grumpy Grandpa">👴</div>
+            <div class="character" title="Sun Tzu">⚔️</div>
+            <div class="character" title="Isaac Newton">🍎</div>
+        </div>
+    </section>
+
+    <section class="privacy-section">
+        <h2>🛡️ Your Privacy is Sacred</h2>
+        <p>Fate Shake collects absolutely zero data. No tracking, no analytics, no accounts. Everything stays on your device.</p>
+        <div class="privacy-icons">
+            <div class="privacy-item">
+                <div class="icon">🚫</div>
+                <div class="label">No Tracking</div>
+            </div>
+            <div class="privacy-item">
+                <div class="icon">📵</div>
+                <div class="label">No Ads</div>
+            </div>
+            <div class="privacy-item">
+                <div class="icon">🔒</div>
+                <div class="label">No Accounts</div>
+            </div>
+            <div class="privacy-item">
+                <div class="icon">💾</div>
+                <div class="label">Local Storage Only</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="max-width: 600px; margin: 0 auto 20px; font-size: 0.8rem; color: #555;">
+            ⚠️ Fate Shake is for entertainment purposes only. All answers are randomly generated. 
+            Do not use for important life decisions. See our <a href="terms.html">Terms of Use</a> for full disclaimer.
+        </p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="support.html">Support</a>
+            <a href="mailto:contact@comtog.com  ">Contact</a>
+        </p>
+        <p style="margin-top: 16px;">© 2026 Fate Shake. All rights reserved.</p>
+    </footer>
+</body>
+</html>
